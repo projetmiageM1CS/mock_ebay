@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>LoginExample</display-name>
+  <servlet>
+        <display-name>CreateCategorieServlet</display-name>
+        <servlet-name>CreateCategorieServlet</servlet-name>
+        <servlet-class>ebayProject.CreateCategorieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>CreateCategorieServlet</servlet-name>
+     <url-pattern>/CreateCategorieServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
