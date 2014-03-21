@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-  <display-name>LoginExample</display-name>
+  <display-name>index.html</display-name>
+ 
   <servlet>
-        <display-name>CreateCategorieServlet</display-name>
-        <servlet-name>CreateCategorieServlet</servlet-name>
-        <servlet-class>ebayProject.CreateCategorieServlet</servlet-class>
+        <display-name>CreateAnnonceServlet</display-name>
+        <servlet-name>CreateAnnonceServlet</servlet-name>
+        <servlet-class>ebayProject.CreateAnnonceServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-     <servlet-name>CreateCategorieServlet</servlet-name>
-     <url-pattern>/CreateCategorieServlet</url-pattern>
+     <servlet-name>CreateAnnonceServlet</servlet-name>
+     <url-pattern>/CreateAnnonceServlet</url-pattern>
   </servlet-mapping>
+   <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+   <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>

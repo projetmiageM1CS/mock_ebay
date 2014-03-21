@@ -17,8 +17,9 @@
     <div class="right-bloc">
       <div class="first-menu">
         <ul>
-          <li><a href="#"><span>Français</span></a></li>
-          <li><a href="#"><span>Anglais</span></a></li>
+          <li><a href="inscription.jsp"><span>S'inscrire</span></a></li>
+          <li><a href="authentification.jsp"><span>Se connecter</span></a></li>
+		  <li><a href="createAnnonce.jsp"><span>vendez-ici</span></a></li> 
         </ul>
       </div>
      
@@ -35,11 +36,9 @@
     </div>
 	 <div class="menu">
         <ul>
-          <li class="active"><a href="#"><span>Mode</span></a></li>
-          <li><a href="#"><span>Produits électroniques</span></a></li>
-          <li><a href="#"><span>Boutiques de marque</span></a></li>
-		  <li><a href="#"><span>Livres & collections</span></a></li>
-          <li class="last"><a href="#"><span>Soldes</span></a></li>
+          <li><a href="mode.jsp"><span>Mode</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
@@ -118,7 +117,7 @@
       <div class="produits">
         <ul>
           <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="polo.html">Polo PEPE JEANS</a></li>
+          <li class="description"><a href="polo.jsp">Polo PEPE JEANS</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
 		 <ul>

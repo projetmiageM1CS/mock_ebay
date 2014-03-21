@@ -17,8 +17,9 @@
     <div class="right-bloc">
       <div class="first-menu">
         <ul>
-          <li><a href="#"><span>Français</span></a></li>
-          <li><a href="#"><span>Anglais</span></a></li>
+          <li><a href="inscription.jsp"><span>S'inscrire</span></a></li>
+          <li><a href="authentification.jsp"><span>Se connecter</span></a></li>
+		  <li><a href="createAnnonce.jsp"><span>vendez-ici</span></a></li> 
         </ul>
       </div>
      
@@ -35,11 +36,9 @@
     </div>
 	 <div class="menu">
         <ul>
-          <li><a href="#"><span>Mode</span></a></li>
-          <li><a href="#"><span>Produits électroniques</span></a></li>
-          <li><a href="#"><span>Boutiques de marque</span></a></li>
-		  <li><a href="#"><span>Livres & collections</span></a></li>
-          <li class="last"><a href="#"><span>Soldes</span></a></li>
+          <li><a href="mode.jsp"><span>Mode</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
@@ -48,17 +47,17 @@
         <div id="slidebonduelle">
       	  <div class="actualite">
         			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide" />
+                    	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide esway" />
                        
                         <p class="accroche-slide">eSway enchères</p>
                     </div>
                         <div class="slide1">
-                    	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide" />
+                    	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide esway" />
                         
                         <p class="accroche-slide">eSway Mode</p>
                     </div>
                             			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide2.png" width="960" height="330" alt="slide" />
+                    	<img src="images/backgrounds/img-slide2.png" width="960" height="330" alt="slide esway" />
                         
                         <p class="accroche-slide">eSway Promos</p>
                     </div>
