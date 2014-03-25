@@ -1,5 +1,4 @@
 <%@ page pageEncoding="UTF-8" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -39,33 +38,66 @@
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li class="active"><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
-
+     <!-- <div class="slide-globale">
+        <div id="slidebonduelle">
+      	  <div class="actualite">
+        			<div class="slide1">
+                    	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide bonduelle" />
+                       
+                        <p class="accroche-slide">eSway enchères</p>
+                    </div>
+                        <div class="slide1">
+                    	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide bonduelle" />
+                        
+                        <p class="accroche-slide">eSway Mode</p>
+                    </div>
+                            			<div class="slide1">
+                    	<img src="images/backgrounds/img-slide2.png" width="960" height="330" alt="slide bonduelle" />
+                        
+                        <p class="accroche-slide">eSway Promos</p>
+                    </div>
+       </div>
+       </div>
+       </div>
+    <div class="blocs">
+      <div class="livraison">
+        <h2>Livraison GRATUITE</h2>
+        <p>dès 69€ d’achats</p>
+        <a href="#">+</a></div>
+      <div class="paiement second">
+        <h2>Paiement sécurisé</h2>
+        <p>par CB ou Paypal</p>
+        <a href="#">+</a></div>
+      <div class="second-livraison last">
+        <h2>Livraison en 48/72 H</h2>
+        <p>Inch’Allah...</p>
+        <a href="#">+</a></div>
+    </div>-->
 	<div class="bloc-right-listing">
 		<div class="menu-left">
 			<ul>
-				<li><a href="#">Informatique</a>
+				<li><a href="#">Femme</a>
 				  <ul>
-                  	<li><a href="#">GPS</a></li>
-				    <li><a href="#">Imprimantes</a></li>
-				    <li><a href="#">Clavier</a></li>
-				    <li><a href="#">Souris</a></li>
-				    <li><a href="#">câble</a></li>
-				
+                  	<li><a href="#">Manteau, blouson</a></li>
+				    <li><a href="#">Robe</a></li>
+				    <li><a href="#">Jean</a></li>
+				    <li><a href="#">Pantalon</a></li>
+				    <li><a href="#">Pull</a></li>
+				    <li><a href="#">Chemise</a></li>
+				    <li><a href="#">Vêtement sport femme</a></li>
+				    <li><a href="#">Chaussures</a></li>
+				    <li><a href="#">Vêtement de grossess</a></li>
 				  </ul>
 				
 			  </li>
-				<li><a href="#">Electroménager</a>
-				<ul>
-                  	<li><a href="#">Batteur</a></li>
-				    <li><a href="#">Four</a></li>
-				  </ul>
-				</li>
+				<li><a href="#">Homme</a></li>
+				<li><a href="#">Enfant Bébé</a></li>				
 			</ul>
 			
 		
@@ -74,45 +106,28 @@
 		
 		<div class="promos">
 			<div class="title">
-			<h2>Promos : Electro</h2>
+			<h2>Promos : Mode</h2>
 		</div>
-		<a href=""><img src="images/four.jpg" width="190" height="180" alt="tee-shirt" /></a>
+		<a href=""><img src="images/promos.jpg" width="190" height="180" alt="tee-shirt" /></a>
 		</div>
 	</div>
 	<div class="listing">
       <div class="title">
-        <h2>Catégorie : Electromenager</h2>
+        <h2>Mode : Polo </h2>
       </div>
-      <div class="produits">
-        <ul>
-          <li class="image-prd"><img src="images/menager.jpg" width="219" height="294" alt="tablette" /></li>
-          <li class="description"><a href="polo.jsp">Frigo</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		 <ul>
-          <li class="image-prd"><img src="images/autoradios.jpg" width="219" height="294" alt="mp3" /></li>
-          <li class="description"><a href="">Voiture Auto Lecteur MP3</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		 <ul>
-          <li class="image-prd"><img src="images/gps.jpg" width="219" height="294" alt="gps" /></li>
-          <li class="description"><a href="">GPS O-Synce Navi 2</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
-		<ul>
-          <li class="image-prd"><img src="images/micro.png" width="219" height="294" alt="micro" /></li>
-          <li class="description"><a href="">micro-ondes</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
-		  <ul>
-          <li class="image-prd"><img src="images/electro.jpg" width="219" height="294" alt="gps" /></li>
-          <li class="description"><a href="">GPS</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul>
-          <li class="image-prd"><img src="images/four.jpg" width="219" height="294" alt="four" /></li>
-          <li class="description"><a href="">Four</a></li>
-          <li class="edition">Edition limitée <SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        
+      <div class="fiche-produit">
+			<p class="imgprod"><img src="images/pull.jpg" width="300" height="350" alt="tee-shirt" /></p>
+			<div class="description">
+			<h3>Polo PEPE Jeans</h3>
+			<p>
+			<span>Etat :</span>
+			Neuf avec étiquettes: Objet neuf, jamais porté, vendu dans l'emballage d'origine (comme la boîte ou la pochette d'origine) et/ou avec étiquettes d'origine. Afficher la définition de tous les états
+			<br>	<span>Taille:</span>	M	<br>	<span>Couleur:</span>	Blanc
+			<br><span>	Marque:</span>	pepe jeans<br>	
+			<span>Matière:</span>	Coton<br>	
+			<span>Style:</span>	Polos <br>	</p>
+			<a class = "add" href="">Ajouter au panier</a>
+			</div>
       </div>
     </div>
 	
