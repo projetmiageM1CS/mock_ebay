@@ -37,17 +37,18 @@
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits Ã©lectroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits Electroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
+  	<p class="info">${ message }</p> 
 	 <p class="accroche">Connectez-vous rapidement et ajouter votre annonce eSway :</p>
-     <form method="post" action="index.jsp" class="login">
+     <form method="post" action="ConnexionServlet" class="login">
     <p>
       <label for="login">Email:</label>
-      <input type="text" name="login" id="login" value="name@example.com">
+      <input type="text" name="emailuser" id="login" value="name@example.com">
     </p>
 
     <p>
@@ -59,7 +60,7 @@
       <button type="submit" class="login-button">Login</button>
     </p>
 
-    <p class="forgot-password"><a href="index.jsp">Mot de passe oubliÃ© ?</a></p>
+    <p class="forgot-password"><a href="index.jsp">Mot de passe oublié ?</a></p>
   </form>
 	
   </div>
@@ -83,7 +84,7 @@
         </div>	
         <div class="footer-center">
             <h3><span>Contact</span></h3>
-            <p class="par1"><span>Vous avez des choses Ã  nous dire ?</span> nous sommes <br />Ã  votre Ã©coute du lundi au vendredi de 9h Ã  17h au<span class="tel">00 00 00 00 00</span></p>
+            <p class="par1"><span>Vous avez des choses à  nous dire ?</span> nous sommes <br />A  votre Ã©coute du lundi au vendredi de 9h à  17h au<span class="tel">00 00 00 00 00</span></p>
         </div>
         <div class="footer-right">
         <table>
@@ -98,11 +99,11 @@
           <tr><td><a href="#">Recrutement</a></td>
             <td><a href="#">Livraison</a></td>
           </tr>
-          <tr><td><a href="#">ConfidentialitÃ©</a></td>
-            <td><a href="#">Retours et Ã©changes</a></td>
+          <tr><td><a href="#">Confidentialité</a></td>
+            <td><a href="#">Retours et échanges</a></td>
           </tr>
           <tr><td><a href="#">Blog</a></td>
-            <td><a href="#">Paiement sÃ©curisÃ©</a></td>
+            <td><a href="#">Paiement sécurisé</a></td>
           </tr>
           <tr><td></td><td><a href="#"><img src="images/ico-cb.png" width="34" height="21" alt="cb" /><img src="images/ico-mastercard.png" width="34" height="21" alt="mastercard" /><img src="images/ico-visa.png" width="33" height="21" alt="ico-visa" /><img src="images/ico-paypal.png" width="33" height="21" alt="paypal" /></a></td>
           </tr>
@@ -110,10 +111,10 @@
         </table>
         </div>
          <div class="copyright">
-              <p>eSway Â© Tous droits rÃ©servÃ©s 2014</p>
+              <p>eSway Tous droits réservés 2014</p>
               <ul>
-              <li><a href="#" title="mentions-lÃ©gales">Mentions lÃ©gales</a></li>
-              <li><a href="#" title="crÃ©dits">CrÃ©dits</a></li>
+              <li><a href="#" title="mentions-légales">Mentions légales</a></li>
+              <li><a href="#" title="crédits">Crédits</a></li>
               </ul>
   		</div>
   </div>

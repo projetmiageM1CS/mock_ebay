@@ -1,3 +1,8 @@
+<% Class.forName("org.postgresql.Driver"); %>
+<% java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:postgresql://localhost:5432/bdebayproject","postgres","poste789");%>
+<% java.sql.Statement statement = con.createStatement(); %>
+<% java.sql.ResultSet rs; %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -28,16 +33,13 @@
         <h3>Mon compte</h3>
         <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-       <!--<div class="panier">
-        <h3>Mon panier<span class="prix-total">299,90 â‚¬</span></h3>
-        <p>Articles<span class="nbr-article">8</span></p>
-        </div>-->
+       
       </div>
     </div>
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits Ã©lectroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
@@ -49,7 +51,7 @@
         			<div class="slide1">
                     	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide esway" />
                        
-                        <p class="accroche-slide">eSway enchÃ¨res</p>
+                        <p class="accroche-slide">eSway enchères</p>
                     </div>
                         <div class="slide1">
                     	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide esway" />
@@ -64,20 +66,7 @@
        </div>
        </div>
        </div>
-    <!--<div class="blocs">
-      <div class="livraison">
-        <h2>Livraison GRATUITE</h2>
-        <p>dÃ¨s 69â‚¬ dâ€™achats</p>
-        <a href="#">+</a></div>
-      <div class="paiement second">
-        <h2>Paiement sÃ©curisÃ©</h2>
-        <p>par CB ou Paypal</p>
-        <a href="#">+</a></div>
-      <div class="second-livraison last">
-        <h2>Livraison en 48/72 H</h2>
-        <p>Inchâ€™Allah...</p>
-        <a href="#">+</a></div>
-    </div>-->
+   
 	<div class="promos">
       <div class="title">
         <h2>Promo du jour </h2>
@@ -85,28 +74,37 @@
       <div class="produits">
         <ul>
           <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Polo PEPE JEANS</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
       </div>
     </div>
 	<div class="lastArticles">
       <div class="title">
-        <h2>Derniers articles ajoutÃ©s </h2>
+        <h2>Derniers articles ajoutés </h2>
       </div>
       <div class="produits">
+		<% rs = statement.executeQuery("SELECT * FROM produit"); %>
+		<% while (rs.next())
+		{ %>
+		<ul>
+          <li class="image-prd"><img src="images/autoradios.jpg" width="219" height="294" alt="tee-shirt" /></li>
+          <li class="description"><a href="fiche-produit.jsp?id=<%= rs.getString("idPrdt") %>" ><%= rs.getString("nomprdt") %></a></li>
+          <li class="edition"><SPAN CLASS="prix"><%= rs.getString("prix") %> euros</span></li>
+        </ul>
+		<% } %>
         <ul>
           <li class="image-prd"><img src="images/autoradios.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Voiture Auto Lecteur MP3</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Voiture Auto Lecteur MP3</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
 		 <ul>
           <li class="image-prd"><img src="images/gps.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">GPS O-Synce Navi 2</a></li>
+          <li class="description"><a href="fiche-produit.jsp">GPS O-Synce Navi 2</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
 		<ul>
           <li class="image-prd"><img src="images/sac.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Sac Cuir Desigual</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Sac Cuir Desigual</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
       </div>
     </div>
@@ -117,13 +115,13 @@
       <div class="produits">
         <ul>
           <li class="image-prd"><img src="images/sandale.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Sandale Desigual</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Sandale Desigual</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
         <ul>
           <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES </a></li>
-          <li class="edition">Edition limitÃ©e <SPAN CLASS="prix">40 euros</span></li>
+          <li class="description"><a href="fiche-produit.jsp">3 Valises RIGIDES </a></li>
+          <li class="edition">Edition limitée <SPAN CLASS="prix">40 euros</span></li>
         </ul>
         <ul>
           <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
@@ -133,27 +131,27 @@
         <ul class="last">
           <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
           <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitÃ©e <SPAN CLASS="prix">40 euros</span></li>
+          <li class="edition">Edition limitée <SPAN CLASS="prix">40 euros</span></li>
         </ul>
 		<ul>
           <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Polo PEPE JEANS</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
         <ul>
           <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitÃ©e<SPAN CLASS="prix">40 euros</span></li>
+          <li class="description"><a href="fiche-produit.jsp">3 Valises RIGIDES</a></li>
+          <li class="edition">Edition limitée<SPAN CLASS="prix">40 euros</span></li>
         </ul>
 		<ul>
           <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
+          <li class="description"><a href="fiche-produit.jsp">Polo PEPE JEANS</a></li>
           <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
         </ul>
         <ul class="last">
           <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitÃ©e<SPAN CLASS="prix">40 euros</span></li>
+          <li class="description"><a href="fiche-produit.jsp">3 Valises RIGIDES</a></li>
+          <li class="edition">Edition limitée<SPAN CLASS="prix">40 euros</span></li>
         </ul>
       </div>
     </div>
@@ -170,7 +168,7 @@
                         </form>
                 </div>
                 <div class="actualite">
-                        <h3>Suivez notre actualitÃ©</h3><ul><li><img src="images/fb2.png" width="28" height="28" alt="facebook" /></li>
+                        <h3>Suivez notre actualité</h3><ul><li><img src="images/fb2.png" width="28" height="28" alt="facebook" /></li>
                         <li><img src="images/twit2.png" width="28" height="28" alt="twitter" /></li>
                         <li><img src="images/interest2.png" width="28" height="27" alt="pinterest" /></li>
                         </ul>
@@ -178,7 +176,7 @@
         </div>	
          <div class="footer-center">
             <h3><span>Contact</span></h3>
-            <p class="par1"><span>Vous avez des choses Ã  nous dire ?</span> nous sommes <br />Ã  votre Ã©coute du lundi au vendredi de 9h Ã  17h au<span class="tel">00 00 00 00 00</span></p>
+            <p class="par1"><span>Vous avez des choses à nous dire ?</span> nous sommes <br />A  votre écoute du lundi au vendredi de 9h Ã  17h au<span class="tel">00 00 00 00 00</span></p>
         </div>
         <div class="footer-right">
         <table>

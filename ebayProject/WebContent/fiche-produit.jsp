@@ -1,5 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<% Class.forName("org.postgresql.Driver"); %>
+<% java.sql.Connection con = java.sql.DriverManager.getConnection("jdbc:postgresql://localhost:5432/bdebayproject","postgres","poste789");%>
+<% java.sql.Statement statement = con.createStatement(); %>
+<% java.sql.ResultSet rs; %>
+
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -8,7 +14,7 @@
 
 <script src="js/slides.min.jquery.js" charset="utf-8" type="text/javascript"></script>
 <script src="js/functions.js" charset="utf-8" type="text/javascript"></script>
-<title>eSway</title>
+<title>eSway-Produits</title>
 </head>
 <body>
 <div id="globale">
@@ -29,134 +35,76 @@
         <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
        <!--<div class="panier">
-        <h3>Mon panier<span class="prix-total">299,90 €</span></h3>
+        <h3>Mon panier<span class="prix-total">299,90 â¬</span></h3>
         <p>Articles<span class="nbr-article">8</span></p>
         </div>-->
       </div>
     </div>
 	 <div class="menu">
-       <ul>
+        <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits Ã©lectroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
-            <div class="slide-globale">
-        <div id="slidebonduelle">
-      	  <div class="actualite">
-        			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide bonduelle" />
-                       
-                        <p class="accroche-slide">eSway enchères</p>
-                    </div>
-                        <div class="slide1">
-                    	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide bonduelle" />
-                        
-                        <p class="accroche-slide">eSway Mode</p>
-                    </div>
-                            			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide2.png" width="960" height="330" alt="slide bonduelle" />
-                        
-                        <p class="accroche-slide">eSway Promos</p>
-                    </div>
-       </div>
-       </div>
-       </div>
-    <!--<div class="blocs">
-      <div class="livraison">
-        <h2>Livraison GRATUITE</h2>
-        <p>dès 69€ d’achats</p>
-        <a href="#">+</a></div>
-      <div class="paiement second">
-        <h2>Paiement sécurisé</h2>
-        <p>par CB ou Paypal</p>
-        <a href="#">+</a></div>
-      <div class="second-livraison last">
-        <h2>Livraison en 48/72 H</h2>
-        <p>Inch’Allah...</p>
-        <a href="#">+</a></div>
-    </div>-->
-	<div class="promos">
+    
+	<div class="bloc-right-listing">
+		<div class="menu-left">
+			<ul>
+				<li><a href="#">Femme</a>
+				  <ul>
+                  	<li><a href="#">Manteau, blouson</a></li>
+				    <li><a href="#">Robe</a></li>
+				    <li><a href="#">Jean</a></li>
+				    <li><a href="#">Pantalon</a></li>
+				    <li><a href="#">Pull</a></li>
+				    <li><a href="#">Chemise</a></li>
+				    <li><a href="#">Vétement sport femme</a></li>
+				    <li><a href="#">Chaussures</a></li>
+				    <li><a href="#">Vétement de grossess</a></li>
+				  </ul>
+				
+			  </li>
+				<li><a href="#">Homme</a></li>
+				<li><a href="#">Enfant Bébé</a></li>				
+			</ul>
+			
+		
+		</div>
+		
+		
+		<div class="promos">
+			<div class="title">
+			<h2>Promos : Mode</h2>
+		</div>
+		<a href=""><img src="images/promos.jpg" width="190" height="180" alt="tee-shirt" /></a>
+		</div>
+	</div>
+	<div class="listing">
       <div class="title">
-        <h2>Promo du jour </h2>
+        <h2>Mode : Polo </h2>
       </div>
-      <div class="produits">
-        <ul>
-          <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
+      <div class="fiche-produit">
+      <form name="actionForm" action="CreateProduitServlet" method ="Post">
+      <%  rs = statement.executeQuery("SELECT * FROM produit where idprdt = 766"); %>
+      <% while (rs.next())
+			{ %>
+			<p class="imgprod"><img src="<%= rs.getString("imgprdt") %>" width="300" height="350" alt="tee-shirt" /></p>
+			
+			<div class="description">
+			
+			<h3><%= rs.getString("nomprdt") %></h3>
+			<p><span>Description :</span><%= rs.getString("descprdt") %></p>
+			<p><span>Prix :</span><%= rs.getString("prix") %> euros </p>
+			
+			<% } %> 
+			<a class = "add" href="">Ench&eacute;rir</a>
+			</div>
       </div>
     </div>
-	<div class="lastArticles">
-      <div class="title">
-        <h2>Derniers articles ajoutés </h2>
-      </div>
-      <div class="produits">
-        <ul>
-          <li class="image-prd"><img src="images/autoradios.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Voiture Auto Lecteur MP3</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		 <ul>
-          <li class="image-prd"><img src="images/gps.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">GPS O-Synce Navi 2</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
-		<ul>
-          <li class="image-prd"><img src="images/sac.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Sac Cuir Desigual</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
-      </div>
-    </div>
-    <div class="meilleurs-ventes">
-      <div class="title">
-        <h2>Les meilleures ventes</h2>
-      </div>
-      <div class="produits">
-        <ul>
-          <li class="image-prd"><img src="images/sandale.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Sandale Desigual</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul>
-          <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES </a></li>
-          <li class="edition">Edition limitée <SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul>
-          <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul class="last">
-          <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitée <SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		<ul>
-          <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul>
-          <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitée<SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		<ul>
-          <li class="image-prd"><img src="images/pull.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">Polo PEPE JEANS</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-        <ul class="last">
-          <li class="image-prd"><img src="images/valise.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="">3 Valises RIGIDES</a></li>
-          <li class="edition">Edition limitée<SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-      </div>
-    </div>
+	
   </div>
 </div>
 <div id="footer-globale"> 
@@ -170,7 +118,7 @@
                         </form>
                 </div>
                 <div class="actualite">
-                        <h3>Suivez notre actualité</h3><ul><li><img src="images/fb2.png" width="28" height="28" alt="facebook" /></li>
+                        <h3>DEVENIR FAN ET PARTAGER</h3><ul><li><img src="images/fb2.png" width="28" height="28" alt="facebook" /></li>
                         <li><img src="images/twit2.png" width="28" height="28" alt="twitter" /></li>
                         <li><img src="images/interest2.png" width="28" height="27" alt="pinterest" /></li>
                         </ul>
@@ -178,26 +126,26 @@
         </div>	
         <div class="footer-center">
             <h3><span>Contact</span></h3>
-            <p class="par1"><span>Vous avez des choses à nous dire ?</span>Si vous êtes pressé, nous sommes <br />à votre écoute du lundi au vendredi de 9h à 17h au<span class="tel">00 00 00 00 00</span></p>
+            <p class="par1"><span>Vous avez des choses Ã  nous dire ?</span> nous sommes <br />Ã  votre Ã©coute du lundi au vendredi de 9h Ã  17h au<span class="tel">00 00 00 00 00</span></p>
         </div>
         <div class="footer-right">
         <table>
         <thead><tr><th>A propos</th><th>Services</th></tr></thead>
         <tbody>
           <tr><td><a href="#">Contact</a></td>
-            <td><a href="#">CGU</a></td>
+            <td><a href="#">Contact</a></td>
           </tr>
-          <tr><td><a href="#">Contact</a></td>
+          <tr><td><a href="#">CGU</a></td>
             <td><a href="#">CGU</a></td>
           </tr>
           <tr><td><a href="#">Recrutement</a></td>
             <td><a href="#">Livraison</a></td>
           </tr>
-          <tr><td><a href="#">Confidentialité</a></td>
-            <td><a href="#">Retours et échanges</a></td>
+          <tr><td><a href="#">ConfidentialitÃ©</a></td>
+            <td><a href="#">Retours et Ã©changes</a></td>
           </tr>
           <tr><td><a href="#">Blog</a></td>
-            <td><a href="#">Paiement sécurisé</a></td>
+            <td><a href="#">Paiement sÃ©curisÃ©</a></td>
           </tr>
           <tr><td></td><td><a href="#"><img src="images/ico-cb.png" width="34" height="21" alt="cb" /><img src="images/ico-mastercard.png" width="34" height="21" alt="mastercard" /><img src="images/ico-visa.png" width="33" height="21" alt="ico-visa" /><img src="images/ico-paypal.png" width="33" height="21" alt="paypal" /></a></td>
           </tr>
@@ -205,10 +153,10 @@
         </table>
         </div>
          <div class="copyright">
-              <p>eSway © Tous droits réservés 2014</p>
+              <p>eSway Â© Tous droits rÃ©servÃ©s 2014</p>
               <ul>
-              <li><a href="#" title="mentions-légales">Mentions légales</a></li>
-              <li><a href="#" title="crédits">Crédits</a></li>
+              <li><a href="#" title="mentions-lÃ©gales">Mentions lÃ©gales</a></li>
+              <li><a href="#" title="crÃ©dits">CrÃ©dits</a></li>
               </ul>
   		</div>
   </div>

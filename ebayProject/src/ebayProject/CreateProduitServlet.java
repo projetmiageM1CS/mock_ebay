@@ -15,7 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class CreateAnnonceServlet extends HttpServlet {
+public class CreateProduitServlet extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -33,10 +33,7 @@ public class CreateAnnonceServlet extends HttpServlet {
  		      String user = "postgres";
  		      String passwd = "poste789";
  		     System.out.println("Connexion effective !");
- 		      //request.getSession().setAttribute("utilisateurConnecté", utilisateur);
- 		     //if(request.getSession().getAttribute(utilisateurConnecté) !=null){
- 		    	 
- 		     //}
+ 		      
  		     Connection conn = null;
 		
 				conn = DriverManager.getConnection(url, user, passwd);
@@ -49,40 +46,40 @@ public class CreateAnnonceServlet extends HttpServlet {
 				statement = conn.createStatement();
  		      ResultSet resultat = null;
 		
-				resultat = statement.executeQuery("Select * from annonce");
+				resultat = statement.executeQuery("Select * from produit");
  		    
 				resultat.next();
  		      
  		      // Recuperatiion des données saisies
- 		      String nomAn=request.getParameter("titreannonce");
- 		      String descriptionAn=request.getParameter("descriptionannonce");
- 		      System.out.println(request.getParameter("prixannonce"));
- 		      Integer prixAn=Integer.parseInt(request.getParameter("prixannonce")); 		    
- 		      String photoAn=request.getParameter("photoannonce");
- 		      System.out.println(nomAn+" "+descriptionAn+" "+prixAn+" "+photoAn);
+ 		      String nomPr=request.getParameter("nomprdt");
+ 		      String descriptionPr=request.getParameter("descprdt");
+// 		      System.out.println(request.getParameter("prixannonce"));
+ 		      Integer prixPr=Integer.parseInt(request.getParameter("prix")); 		    
+ 		      String photoPr=request.getParameter("imgprdt");
+ 		      System.out.println(nomPr+" "+descriptionPr+" "+prixPr+" "+photoPr);
  		      String message;
  		      // Test si donnee vide ou pas
- 		      if ( nomAn.trim().isEmpty() || descriptionAn.trim().isEmpty() || prixAn==0 ) {
+ 		      if ( nomPr.trim().isEmpty() || descriptionPr.trim().isEmpty() || prixPr==0 ) {
  	            message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerAnnonce.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
  	          } else {
  	            message = "Annonce créé avec succès !";
  	          }
  		      
 // 		      Creation d'une annonce (initialisation)
- 		     Annonce annonce = new Annonce();
- 	        annonce.setNomA(nomAn );
- 	        annonce.setDescriptionA(descriptionAn );
- 	        annonce.setPrixA(prixAn );
- 	        annonce.setPhotoA(photoAn );
+ 		     Produit produits = new Produit();
+ 		    produits.setNomP(nomPr);;
+ 		   produits.setDescp(descriptionPr);;
+ 		  produits.setPrixP(prixPr);
+ 		 produits.setImgP(photoPr);
  	        
  	        //Ajout d'un bean annonce
- 	        request.setAttribute( "annonce", annonce );
+ 	        request.setAttribute( "produits", produits );
  	        request.setAttribute( "message", message );
  	       
  		      
  		      
  		    
-		int resultat2 = statement.executeUpdate(("insert into annonce (titreannonce, descriptionannonce, prixannonce, photoannonce) values ('"+nomAn+"' ,'"+descriptionAn+"','"+prixAn+"','"+photoAn+"') "));}
+		int resultat2 = statement.executeUpdate(("insert into produit (nomprdt, descprdt,prix, imgprdt) values ('"+nomPr+"' ,'"+descriptionPr+"','"+prixPr+"','"+photoPr+"') "));}
 // 		     
 // 		      PrintWriter pr = response.getWriter();
 // 		      pr.print("Votre annonce s'est bien créée");

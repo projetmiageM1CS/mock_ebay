@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -37,39 +39,39 @@
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits Electroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
-	 <p class="accroche">Inscrivez-vous rapidement sur eSway :</p>
-     <form method="post" action="inscription.php" class="login">
+	 <p class="accroche">Inscrivez-vous sur eSway :</p>
+     <form name="actionForm" action="CreateUtilisateurServlet" method ="Post" class="login">
     <p>
       <label for="nom">Nom:</label>
-      <input type="text" name="nom" id="nom" value="">
+      <input type="text" name="nomuser" id="nom" value="">
     </p>
   
   <p>
-      <label for="prenom">Prénom:</label>
-      <input type="text" name="prenom" id="prenom" value="">
+      <label for="prenom">Pr�nom:</label>
+      <input type="text" name="prenomuser" id="prenom" value="">
     </p>
 	  <p>
       <label for="email">Email:</label>
-      <input type="text" name="email" id="email" value="">
+      <input type="text" name="emailuser" id="email" value="">
     </p>
 	  <p>
       <label for="pass">Password:</label>
       <input type="password" name="password" id="pass" value="">
     </p>
 	  <p>
-      <label for="adresse">Adresse:</label>
-      <input type="text" name="adresse" id="adresse" value="">
-    </p>
-	  <p>
-      <label for="tel">Téléphone:</label>
-      <input type="text" name="tel" id="tel" value="">
-    </p>
+<!--       <label for="adresse">Adresse:</label> -->
+<!--       <input type="text" name="adresse" id="adresse" value=""> -->
+<!--     </p> -->
+<!-- 	  <p> -->
+<!--       <label for="tel">Téléphone:</label> -->
+<!--       <input type="text" name="tel" id="tel" value=""> -->
+<!--     </p> -->
     
 
     <p class="login-submit">

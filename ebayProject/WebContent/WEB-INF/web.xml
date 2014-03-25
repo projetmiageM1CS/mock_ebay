@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-  <display-name>index.html</display-name>
+  <display-name>index.jsp</display-name>
  
   <servlet>
         <display-name>CreateAnnonceServlet</display-name>
         <servlet-name>CreateAnnonceServlet</servlet-name>
         <servlet-class>ebayProject.CreateAnnonceServlet</servlet-class>
   </servlet>
+  <servlet>
+        <display-name>CreateUtilisateurServlet</display-name>
+        <servlet-name>CreateUtilisateurServlet</servlet-name>
+        <servlet-class>ebayProject.CreateUtilisateurServlet</servlet-class>
+  </servlet>
+  <servlet>
+        <display-name>ConnexionServlet</display-name>
+        <servlet-name>ConnexionServlet</servlet-name>
+        <servlet-class>ebayProject.ConnexionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
      <servlet-name>CreateAnnonceServlet</servlet-name>
      <url-pattern>/CreateAnnonceServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+     <servlet-name>CreateUtilisateurServlet</servlet-name>
+     <url-pattern>/CreateUtilisateurServlet</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+     <servlet-name>ConnexionServlet</servlet-name>
+     <url-pattern>/ConnexionServlet</url-pattern>
   </servlet-mapping>
    <session-config>
         <session-timeout>

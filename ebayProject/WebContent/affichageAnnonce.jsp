@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -8,9 +10,10 @@
 
 <script src="js/slides.min.jquery.js" charset="utf-8" type="text/javascript"></script>
 <script src="js/functions.js" charset="utf-8" type="text/javascript"></script>
-<title>eSway-Produits</title>
+ <title>Affichage d'une Annonce</title>
 </head>
 <body>
+
 <div id="globale">
   <div id="header">
     <h1 class="logo"><img src="images/logo.png" width="150" height="70" alt="logo" /></h1>
@@ -37,99 +40,19 @@
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits Electroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
-     <!-- <div class="slide-globale">
-        <div id="slidebonduelle">
-      	  <div class="actualite">
-        			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide1.png" width="960" height="330" alt="slide bonduelle" />
-                       
-                        <p class="accroche-slide">eSway enchères</p>
-                    </div>
-                        <div class="slide1">
-                    	<img src="images/backgrounds/img-slide.png" width="960" height="330" alt="slide bonduelle" />
-                        
-                        <p class="accroche-slide">eSway Mode</p>
-                    </div>
-                            			<div class="slide1">
-                    	<img src="images/backgrounds/img-slide2.png" width="960" height="330" alt="slide bonduelle" />
-                        
-                        <p class="accroche-slide">eSway Promos</p>
-                    </div>
-       </div>
-       </div>
-       </div>
-    <div class="blocs">
-      <div class="livraison">
-        <h2>Livraison GRATUITE</h2>
-        <p>dès 69€ d’achats</p>
-        <a href="#">+</a></div>
-      <div class="paiement second">
-        <h2>Paiement sécurisé</h2>
-        <p>par CB ou Paypal</p>
-        <a href="#">+</a></div>
-      <div class="second-livraison last">
-        <h2>Livraison en 48/72 H</h2>
-        <p>Inch’Allah...</p>
-        <a href="#">+</a></div>
-    </div>-->
-	<div class="bloc-right-listing">
-		<div class="menu-left">
-			<ul>
-				<li><a href="#">Femme</a>
-				  <ul>
-                  	<li><a href="#">Manteau, blouson</a></li>
-				    <li><a href="#">Robe</a></li>
-				    <li><a href="#">Jean</a></li>
-				    <li><a href="#">Pantalon</a></li>
-				    <li><a href="#">Pull</a></li>
-				    <li><a href="#">Chemise</a></li>
-				    <li><a href="#">Vêtement sport femme</a></li>
-				    <li><a href="#">Chaussures</a></li>
-				    <li><a href="#">Vêtement de grossess</a></li>
-				  </ul>
-				
-			  </li>
-				<li><a href="#">Homme</a></li>
-				<li><a href="#">Enfant Bébé</a></li>				
-			</ul>
-			
-		
-		</div>
-		
-		
-		<div class="promos">
-			<div class="title">
-			<h2>Promos : Mode</h2>
-		</div>
-		<a href=""><img src="images/promos.jpg" width="190" height="180" alt="tee-shirt" /></a>
-		</div>
-	</div>
-	<div class="listing">
-      <div class="title">
-        <h2>Mode : Polo </h2>
-      </div>
-      <div class="fiche-produit">
-			<p class="imgprod"><img src="images/pull.jpg" width="300" height="350" alt="tee-shirt" /></p>
-			<div class="description">
-			<h3>Polo PEPE Jeans</h3>
-			<p>
-			<span>Etat :</span>
-			Neuf avec étiquettes: Objet neuf, jamais porté, vendu dans l'emballage d'origine (comme la boîte ou la pochette d'origine) et/ou avec étiquettes d'origine. Afficher la définition de tous les états
-			<br>	<span>Taille:</span>	M	<br>	<span>Couleur:</span>	Blanc
-			<br><span>	Marque:</span>	pepe jeans<br>	
-			<span>Matière:</span>	Coton<br>	
-			<span>Style:</span>	Polos <br>	</p>
-			<a class = "add" href="">Ajouter au panier</a>
-			</div>
-      </div>
-    </div>
-	
+        <%-- Affichage de la cha�ne "message" transmise par la servlet --%>
+        <p class="info">${ message }</p>      
+        <%-- Puis affichage des donn�es enregistr�es dans le bean "client" transmis par la servlet --%>
+        <p>Titre : ${ annonce.nomA }</p>
+        <p>Description : ${ annonce.descriptionA }</p>
+        <p>Prix : ${ annonce.prixA}</p>
+        <p>Photo : ${ annonce.photoA}</p>	
   </div>
 </div>
 <div id="footer-globale"> 
@@ -187,5 +110,6 @@
   </div>
  
 </div>
+
 </body>
 </html>

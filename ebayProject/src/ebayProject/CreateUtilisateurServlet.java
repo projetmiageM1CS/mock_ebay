@@ -1,11 +1,5 @@
 package ebayProject;
 import java.sql.*;
-import java.beans.Statement;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,10 +9,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-public class CreateAnnonceServlet extends HttpServlet {
+
+public class CreateUtilisateurServlet extends HttpServlet{
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	 
@@ -33,10 +29,7 @@ public class CreateAnnonceServlet extends HttpServlet {
  		      String user = "postgres";
  		      String passwd = "poste789";
  		     System.out.println("Connexion effective !");
- 		      //request.getSession().setAttribute("utilisateurConnecté", utilisateur);
- 		     //if(request.getSession().getAttribute(utilisateurConnecté) !=null){
- 		    	 
- 		     //}
+ 		      
  		     Connection conn = null;
 		
 				conn = DriverManager.getConnection(url, user, passwd);
@@ -49,40 +42,39 @@ public class CreateAnnonceServlet extends HttpServlet {
 				statement = conn.createStatement();
  		      ResultSet resultat = null;
 		
-				resultat = statement.executeQuery("Select * from annonce");
+				resultat = statement.executeQuery("Select * from utilisat");
  		    
 				resultat.next();
  		      
  		      // Recuperatiion des données saisies
- 		      String nomAn=request.getParameter("titreannonce");
- 		      String descriptionAn=request.getParameter("descriptionannonce");
- 		      System.out.println(request.getParameter("prixannonce"));
- 		      Integer prixAn=Integer.parseInt(request.getParameter("prixannonce")); 		    
- 		      String photoAn=request.getParameter("photoannonce");
- 		      System.out.println(nomAn+" "+descriptionAn+" "+prixAn+" "+photoAn);
+ 		      String nomU=request.getParameter("nomuser");
+ 		      String prenomU=request.getParameter("prenomuser");
+ 		     String emailU=request.getParameter("emailuser"); 		    
+ 		      String passwordU=request.getParameter("password");
+ 		      System.out.println(nomU+" "+prenomU+" "+emailU+" "+passwordU);
  		      String message;
  		      // Test si donnee vide ou pas
- 		      if ( nomAn.trim().isEmpty() || descriptionAn.trim().isEmpty() || prixAn==0 ) {
+ 		      if ( nomU.trim().isEmpty() || prenomU.trim().isEmpty() || emailU.trim().isEmpty() || passwordU.trim().isEmpty() ) {
  	            message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerAnnonce.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
  	          } else {
- 	            message = "Annonce créé avec succès !";
+ 	            message = "Utilisateur créé avec succès !";
  	          }
  		      
-// 		      Creation d'une annonce (initialisation)
- 		     Annonce annonce = new Annonce();
- 	        annonce.setNomA(nomAn );
- 	        annonce.setDescriptionA(descriptionAn );
- 	        annonce.setPrixA(prixAn );
- 	        annonce.setPhotoA(photoAn );
+// 		      Creation d'un utilisateur (initialisation)
+ 		     Utilisateur utilisateur = new Utilisateur();
+ 		    utilisateur.setNom(nomU );
+ 		   utilisateur.setPrenom(prenomU);
+ 		  utilisateur.setEmail(emailU);
+ 		 utilisateur.setPassword(passwordU);
  	        
  	        //Ajout d'un bean annonce
- 	        request.setAttribute( "annonce", annonce );
+ 	        request.setAttribute( "utilisateur", utilisateur );
  	        request.setAttribute( "message", message );
  	       
  		      
  		      
  		    
-		int resultat2 = statement.executeUpdate(("insert into annonce (titreannonce, descriptionannonce, prixannonce, photoannonce) values ('"+nomAn+"' ,'"+descriptionAn+"','"+prixAn+"','"+photoAn+"') "));}
+		int resultat2 = statement.executeUpdate(("insert into utilisat (nomuser, prenomuser, emailuser,password) values ('"+nomU+"' ,'"+prenomU+"','"+emailU+"','"+passwordU+"') "));}
 // 		     
 // 		      PrintWriter pr = response.getWriter();
 // 		      pr.print("Votre annonce s'est bien créée");
@@ -90,7 +82,7 @@ public class CreateAnnonceServlet extends HttpServlet {
  		      catch (Exception e) {
 				// TODO: handle exception
 			}
- 		     this.getServletContext().getRequestDispatcher( "/affichageAnnonce.jsp" ).forward( request, response );
+ 		     this.getServletContext().getRequestDispatcher( "/authentification.jsp" ).forward( request, response );
  		     
 }
     							
@@ -99,3 +91,6 @@ public class CreateAnnonceServlet extends HttpServlet {
 							
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
 }
+
+
+

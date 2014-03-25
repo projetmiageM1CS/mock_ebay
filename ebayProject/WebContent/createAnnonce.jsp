@@ -40,14 +40,14 @@
 	 <div class="menu">
         <ul>
           <li><a href="mode.jsp"><span>Mode</span></a></li>
-          <li><a href="produitsElectro.jsp"><span>Produits électroniques</span></a></li>
+          <li><a href="produitsElectro.jsp"><span>Produits Electroniques</span></a></li>
 		  <li><a href="livres.jsp"><span>Livres & collections</span></a></li>
         </ul>
       </div>
   </div>
   <div id="content">
      <p class="accroche">Ajoutez votre annonce eSway rapidement :</p>
-     <form name="actionForm" action="CreateAnnonceServlet" method ="Post">
+     <form name="actionForm" action="CreateAnnonceServlet" method ="Post" class="FormProd">
     <p>
       <label for="nomProd">Nom du produit:</label>
       <input type="text" name="titreannonce" id="nomProd" value="">
