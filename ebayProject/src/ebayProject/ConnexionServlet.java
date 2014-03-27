@@ -49,7 +49,7 @@ public class ConnexionServlet extends HttpServlet {
 	  		
 	  				statement = conn.createStatement();
 	   		      ResultSet resultat = null;
-	   		      
+	   		   
 	   		   // Recuperatiion des données saisies
 	   		      String emailU=request.getParameter("emailuser"); 		    
 	   		      String passwordU=request.getParameter("password");   	
@@ -70,7 +70,7 @@ public class ConnexionServlet extends HttpServlet {
 //		   utilisateur.setPrenom(prenomU);
 //	        
 	        //Ajout d'un bean annonce
-	        request.setAttribute( "utilisateur", utilisateur );
+	       
 	        request.setAttribute( "message", message );
 	       
 	  		
@@ -82,14 +82,16 @@ public class ConnexionServlet extends HttpServlet {
  					 if(resultat.next() ) 
 	     				{
      					   trouv = true;
+     					   request.getSession().setAttribute("utilisateurConnecte", utilisateur.getEmail());
+     			  		  
+     					   
+     					   
      					  this.getServletContext().getRequestDispatcher( "/createAnnonce2.jsp" ).forward( request, response );
 	     				}
  					else 
  						{
  							trouv = false;
- 						JOptionPane.showMessageDialog(null,"Utilisateur non trouvé!!!" );
- 						
- 					
+ 							this.getServletContext().getRequestDispatcher( "/erreur.jsp" ).forward( request, response );					
 	     				}
 	         	 }
  					
@@ -98,6 +100,7 @@ public class ConnexionServlet extends HttpServlet {
 	     					e1.printStackTrace();
 	 
 	     				}
+	         	 
 	 							 	     	
 }
 }
