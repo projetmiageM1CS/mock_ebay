@@ -26,7 +26,7 @@
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
-        <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
+        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
       
       </div>

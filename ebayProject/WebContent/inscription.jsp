@@ -28,7 +28,7 @@
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
-        <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
+        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
        <!--<div class="panier">
         <h3>Mon panier<span class="prix-total">299,90 €</span></h3>
@@ -65,15 +65,6 @@
       <input type="password" name="password" id="pass" value="">
     </p>
 	  <p>
-<!--       <label for="adresse">Adresse:</label> -->
-<!--       <input type="text" name="adresse" id="adresse" value=""> -->
-<!--     </p> -->
-<!-- 	  <p> -->
-<!--       <label for="tel">Téléphone:</label> -->
-<!--       <input type="text" name="tel" id="tel" value=""> -->
-<!--     </p> -->
-    
-
     <p class="login-submit">
       <button type="submit" class="login-button">Login</button>
     </p>

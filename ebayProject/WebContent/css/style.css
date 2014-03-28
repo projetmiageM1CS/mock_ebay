@@ -450,3 +450,11 @@ padding: 8px;
 .lt-ie9 .about {
   background: #313131;
 }
+<!-- confirmation -->
+.confirmation .recap{width:40%;margin:0 auto 25px;display:block;}
+.confirmation p.info {border:1px solid #000;;margin:0 0 20px;font-size:15px;color:#128852; padding:20px; text-align:center;font-family :KreonRegular; font-weight:bold;}
+.confirmation .recap p{font-size:12px;font-family :KreonRegular; }
+.confirmation .recap p span{color:#0155C3;}
+.confirmation .recap p.title{font-family :KreonRegular!important;font-size:15px!important; color:#D83812; text-align:center!important;}
+
+p.imagProd{float:left; margin-right:10px;}

@@ -31,7 +31,7 @@
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
-        <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
+        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
        
       </div>
@@ -84,7 +84,7 @@
         <h2>Derniers articles ajoutés </h2>
       </div>
       <div class="produits">
-		<% rs = statement.executeQuery("SELECT * FROM produit"); %>
+		<% rs = statement.executeQuery("SELECT * FROM produit limit 10"); %>
 		<% while (rs.next())
 		{ %>
 		<ul>
@@ -176,7 +176,7 @@
         </div>	
          <div class="footer-center">
             <h3><span>Contact</span></h3>
-            <p class="par1"><span>Vous avez des choses à nous dire ?</span> nous sommes <br />A  votre écoute du lundi au vendredi de 9h Ã  17h au<span class="tel">00 00 00 00 00</span></p>
+            <p class="par1"><span>Vous avez des choses à nous dire ?</span> nous sommes <br />A  votre écoute du lundi au vendredi de 9h à  17h au<span class="tel">00 00 00 00 00</span></p>
         </div>
         <div class="footer-right">
         <table>
@@ -191,11 +191,11 @@
           <tr><td><a href="#">Recrutement</a></td>
             <td><a href="#">Livraison</a></td>
           </tr>
-          <tr><td><a href="#">ConfidentialitÃ©</a></td>
-            <td><a href="#">Retours et Ã©changes</a></td>
+          <tr><td><a href="#">Confidentialité</a></td>
+            <td><a href="#">Retours et échanges</a></td>
           </tr>
           <tr><td><a href="#">Blog</a></td>
-            <td><a href="#">Paiement sÃ©curisÃ©</a></td>
+            <td><a href="#">Paiement sécurisé</a></td>
           </tr>
           <tr><td></td><td><a href="#"><img src="images/ico-cb.png" width="34" height="21" alt="cb" /><img src="images/ico-mastercard.png" width="34" height="21" alt="mastercard" /><img src="images/ico-visa.png" width="33" height="21" alt="ico-visa" /><img src="images/ico-paypal.png" width="33" height="21" alt="paypal" /></a></td>
           </tr>
@@ -203,10 +203,10 @@
         </table>
         </div>
          <div class="copyright">
-              <p>eSway Â© Tous droits rÃ©servÃ©s 2014</p>
+              <p>eSway Tous droits réservés 2014</p>
               <ul>
-              <li><a href="#" title="mentions-lÃ©gales">Mentions lÃ©gales</a></li>
-              <li><a href="#" title="crÃ©dits">CrÃ©dits</a></li>
+              <li><a href="#" title="mentions-légales">Mentions légales</a></li>
+              <li><a href="#" title="crédits">Crédits</a></li>
               </ul>
   		</div>
   </div>

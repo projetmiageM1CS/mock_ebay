@@ -26,7 +26,7 @@
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
-        <p>Bienvenue Mlle Ouali<a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
+        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
        <!--<div class="panier">
         <h3>Mon panier<span class="prix-total">299,90 â‚¬</span></h3>
@@ -84,7 +84,7 @@
         </div>	
         <div class="footer-center">
             <h3><span>Contact</span></h3>
-            <p class="par1"><span>Vous avez des choses à  nous dire ?</span> nous sommes <br />A  votre Ã©coute du lundi au vendredi de 9h à  17h au<span class="tel">00 00 00 00 00</span></p>
+            <p class="par1"><span>Vous avez des choses à  nous dire ?</span> nous sommes <br />A  votre écoute du lundi au vendredi de 9h à  17h au<span class="tel">00 00 00 00 00</span></p>
         </div>
         <div class="footer-right">
         <table>
