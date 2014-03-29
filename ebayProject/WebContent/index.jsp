@@ -28,13 +28,16 @@
         </ul>
       </div>
      
+           <% if (session.getAttribute( "utilisateurConnecte" ) != null) { %>
+      
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
         <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-       
+       		
       </div>
+      <% } %> 
     </div>
 	 <div class="menu">
         <ul>
@@ -84,7 +87,7 @@
         <h2>Derniers articles ajoutés </h2>
       </div>
       <div class="produits">
-		<% rs = statement.executeQuery("SELECT * FROM produit limit 10"); %>
+		<% rs = statement.executeQuery("SELECT * FROM produit limit 6"); %>
 		<% while (rs.next())
 		{ %>
 		<ul>
@@ -93,19 +96,6 @@
           <li class="edition"><SPAN CLASS="prix"><%= rs.getString("prix") %> euros</span></li>
         </ul>
 		<% } %>
-        <ul>
-          <li class="image-prd"><img src="images/autoradios.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="fiche-produit.jsp">Voiture Auto Lecteur MP3</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li>
-        </ul>
-		 <ul>
-          <li class="image-prd"><img src="images/gps.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="fiche-produit.jsp">GPS O-Synce Navi 2</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
-		<ul>
-          <li class="image-prd"><img src="images/sac.jpg" width="219" height="294" alt="tee-shirt" /></li>
-          <li class="description"><a href="fiche-produit.jsp">Sac Cuir Desigual</a></li>
-          <li class="edition"><SPAN CLASS="prix">40 euros</span></li></ul>
       </div>
     </div>
     <div class="meilleurs-ventes">

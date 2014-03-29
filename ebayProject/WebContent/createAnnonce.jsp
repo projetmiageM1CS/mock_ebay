@@ -26,17 +26,16 @@
         </ul>
       </div>
      
+       <% if (session.getAttribute( "utilisateurConnecte" ) != null) { %>
+      
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
-        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %>
-        <a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
+        <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-       <!--<div class="panier">
-        <h3>Mon panier<span class="prix-total">299,90 €</span></h3>
-        <p>Articles<span class="nbr-article">8</span></p>
-        </div>-->
+       		
       </div>
+      <% } %>
     </div>
 	 <div class="menu">
         <ul>
@@ -48,7 +47,7 @@
   </div>
   <div id="content">
      <p class="accroche">Ajoutez votre annonce eSway rapidement :</p>
-     <form name="actionForm" action="CreateAnnonceServlet" method ="Post" class="FormProd" enctype="multipart/form-data">
+     <form name="actionForm" action="CreateAnnonceServlet" method ="Post" class="FormProd" >
     <p>
       <label for="nomProd">Nom du produit:</label>
       <input type="text" name="titreannonce" id="nomProd" value="">

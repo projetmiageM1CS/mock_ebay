@@ -58,10 +58,7 @@ public class ConnexionServlet extends HttpServlet {
 		      // Test si donnee vide ou pas
 		      if ( emailU.trim().isEmpty() || passwordU.trim().isEmpty() ) {
 	            message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerAnnonce.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
-	          } else {
-	            message = "Vous avez êtes connecté!";
-	          }
-		      
+	          } 
 //		      Creation d'un utilisateur (initialisation)
 		     Utilisateur utilisateur = new Utilisateur();
 		  utilisateur.setEmail(emailU);
@@ -71,7 +68,7 @@ public class ConnexionServlet extends HttpServlet {
 //	        
 	        //Ajout d'un bean annonce
 	       
-	        request.setAttribute( "message", message );
+	       
 	       
 	  		
 	  				resultat = statement.executeQuery("Select * from utilisat where emailuser='"+emailU+"' and password='"+passwordU+"'");
@@ -91,7 +88,8 @@ public class ConnexionServlet extends HttpServlet {
  					else 
  						{
  							trouv = false;
- 							this.getServletContext().getRequestDispatcher( "/erreur.jsp" ).forward( request, response );					
+ 							request.setAttribute("etat", "nonConnecte");
+ 							this.getServletContext().getRequestDispatcher( "/authentification.jsp" ).forward( request, response );					
 	     				}
 	         	 }
  					

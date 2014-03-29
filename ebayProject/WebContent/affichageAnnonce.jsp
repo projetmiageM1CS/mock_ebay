@@ -25,16 +25,15 @@
 		  <li><a href="createAnnonce.jsp"><span>vendez-ici</span></a></li> 
         </ul>
       </div>
+      <% if (session.getAttribute( "utilisateurConnecte" ) != null) { %>
+      
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
         <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-       <!--<div class="panier">
-        <h3>Mon panier<span class="prix-total">299,90 â‚¬</span></h3>
-        <p>Articles<span class="nbr-article">8</span></p>
-        </div>-->
       </div>
+      <% } %>
     </div>
 	 <div class="menu">
         <ul>
@@ -44,20 +43,16 @@
         </ul>
       </div>
   </div>
-  <div id="content">
-       
+  <div id="content">    
         <div class="confirmation">
-        		
-		        <%-- Affichage de la chaîne "message" transmise par la servlet --%>
-		        <p class="info">${ message }</p>
-		           <%-- Puis affichage des données enregistrées dans le bean "client" transmis par la servlet --%>
+		        <p class="info">${ message }</p>    
        		 <div class="recap">
-		       <p class='title'>Récapitulatif de votre annonce ajoutée :</p>
-		        	    <p class="imagProd"><img src="images/${ annonce.photoA}" /></p>	
+		       		<p class='title'>Récapitulatif de votre annonce ajoutée :</p>
+		        	    <p class="imagProd"><img src="image_interface/${ annonce.photoA}" /></p>	
 				        <p><span>Titre :</span> ${ annonce.nomA }</p>
 				        <p><span>Description: </span> ${ annonce.descriptionA }</p>
-				        <p><span>Prix :</span> ${ annonce.prixA} euros</p>
-				      
+			        <p><span>Prix :</span> ${ annonce.prixA} euros</p>
+		      
 		     </div>      
 		       
         </div>

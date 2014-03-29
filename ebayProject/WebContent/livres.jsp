@@ -23,13 +23,15 @@
         </ul>
       </div>
      
+      <% if (session.getAttribute( "utilisateurConnecte" ) != null) { %>
+      
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
         <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-      
       </div>
+      <% } %> 
     </div>
 	 <div class="menu">
         <ul>

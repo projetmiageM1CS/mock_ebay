@@ -23,16 +23,18 @@
         </ul>
       </div>
      
+      <% if (session.getAttribute( "utilisateurConnecte" ) != null) { %>
+      
       <div class="bloc-right">
         <div class="compte">
         <h3>Mon compte</h3>
         <p>Bienvenue <%= session.getAttribute( "utilisateurConnecte" ) %><a href="#"><img src="images/ico-delete.png" width="15" height="15" alt="delete" /></a></p>
         </div>
-       <!--<div class="panier">
-        <h3>Mon panier<span class="prix-total">299,90 â‚¬</span></h3>
-        <p>Articles<span class="nbr-article">8</span></p>
-        </div>-->
+       		
       </div>
+      <% }%>
+    	  
+      
     </div>
 	 <div class="menu">
         <ul>
@@ -42,8 +44,14 @@
         </ul>
       </div>
   </div>
+  
+  <%if(request.getAttribute("etat")=="nonConnecte") {%>
+  	<script language="javascript">
+    	  	alert ("Vous n' êtes pas encore inscrit inscrivez d abord");
+    	  </script>
+  <%} %>
   <div id="content">
-  	<p class="info">${ message }</p> 
+  	 <p class="info">${ message }</p>
 	 <p class="accroche">Connectez-vous rapidement et ajouter votre annonce eSway :</p>
      <form method="post" action="ConnexionServlet" class="login">
     <p>

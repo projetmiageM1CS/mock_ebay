@@ -57,7 +57,7 @@ public class CreateUtilisateurServlet extends HttpServlet{
  		      if ( nomU.trim().isEmpty() || prenomU.trim().isEmpty() || emailU.trim().isEmpty() || passwordU.trim().isEmpty() ) {
  	            message = "Erreur - Vous n'avez pas rempli tous les champs obligatoires. <br> <a href=\"creerAnnonce.jsp\">Cliquez ici</a> pour accéder au formulaire de création d'un client.";
  	          } else {
- 	            message = "Utilisateur créé avec succès !";
+ 	            message = "votre compte a été bien créer , bienvenue sur eSway ! , bon shopping";
  	          }
  		      
 // 		      Creation d'un utilisateur (initialisation)

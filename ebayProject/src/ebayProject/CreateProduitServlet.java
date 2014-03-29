@@ -67,8 +67,8 @@ public class CreateProduitServlet extends HttpServlet {
  		      
 // 		      Creation d'une annonce (initialisation)
  		     Produit produits = new Produit();
- 		    produits.setNomP(nomPr);;
- 		   produits.setDescp(descriptionPr);;
+ 		    produits.setNomP(nomPr);
+ 		   produits.setDescp(descriptionPr);
  		  produits.setPrixP(prixPr);
  		 produits.setImgP(photoPr);
  	        
